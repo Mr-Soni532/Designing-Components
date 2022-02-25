@@ -1,0 +1,37 @@
+*{
+    background-color: grey;
+    box-sizing: border-box;
+}
+.box {
+    outline: 2px solid rgb(248, 247, 247);
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container, .cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.cont2 {
+    gap: 0px;
+    width:100%;
+}
+.cont2>.box {
+    height: 33vh;
+}
+
+.cont {
+    flex-direction: row;
+    height: 80vh;
+    gap: 0px;
+}
+
+.sidebar,.ads {
+    width: 30vw;
+}

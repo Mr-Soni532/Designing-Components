@@ -1,0 +1,70 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+body{
+    background-color: rgb(139, 135, 135);
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    margin-top: 100px;
+    padding: 32px;
+}
+
+.select-box{
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+}
+
+.select-box .option-container{
+    background: #2f3640;
+    color: #f5f6f6;
+    width: 100%;
+    transition: all 0.4s;
+    border-radius: 4px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    order: 1;
+}
+.select-box .option-container.active{
+max-height: 300px;
+opacity: 1;
+}
+.select-box .option, .selected{
+    padding: 12px 24px;
+    cursor: pointer;
+}
+.select-box .option:hover{
+    background-color: #414b57;
+}
+.select-box .option .radio {
+    display: none;
+}
+.selected{
+    background-color: #2f3640;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    color: #f5f6fa;
+    position: relative;
+    order: 0;
+}
+.selected::after{
+    content: "";
+    background: url("iconmonstr-arrow-65.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 16px;
+    right: 10px;
+    top: 15px;
+    color: white;
+    transition: all 0.4s;
+}
+.select-box .option-container.active + .selected::after{
+    transform: rotateX(180deg);
+    top: -15px;
+}

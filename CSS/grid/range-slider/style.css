@@ -1,0 +1,131 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e5e5e5
+}
+
+/* Middle */
+.middle {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* values */
+/* .values{
+    background-color: #3264fe;
+    width: 32%;
+    position: relative;
+    top: -50px;
+    margin: auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    color: #ffffff;
+}
+.values:before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 15px solid #3264fe;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    margin: auto;
+    bottom: -14px;
+    left: 0;
+    right: 0;
+} */
+.slider {
+  position: relative;
+  z-index: 1;
+  height: 10px;
+  margin: 0 15px;
+}
+/* slider Track */
+.slider > .track {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: #c6aee7;
+}
+/* range bar */
+.slider > .range {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0%;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: #6200ee;
+}
+/* thumbs */
+.slider > .thumb {
+  position: absolute;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(98,0,238);
+  /* opacity: 0.3; */
+  border-radius: 50%;
+  box-shadow: 0 0 0 0px rgba(98,0,238,.5);
+  transition: box-shadow .3s ease-in-out;
+}
+/* no space between thumb and left by this we are getting all the 
+property of thumb along with left */
+.slider > .thumb.left {
+  left: 25%;
+  /* to fix the position of the thumb */
+  transform: translate(-15px, -10px);
+}
+.slider > .thumb.right {
+  right: 25%;
+  transform: translate(15px, -10px);
+}
+.slider > .thumb.hover{
+    box-shadow: 0 0 0 20px rgba(98,0,238,.1);
+}
+.slider > .thumb.active{
+    box-shadow: 0 0 0 40px rgba(98,0,238,.1);
+}
+/* Set both the input range to 100% and then merge both of them for a one line look */
+input[type=range] {
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+  /* here webkit target the defalut design of the input 
+  -webkit-appearance: none; means display of default design will be none*/
+  z-index: 2;
+  height: 10px;
+  width: 100%;
+  opacity: 0;
+  /* top: -100px */
+}
+/* ------------ for Better understanding uncomment this */
+/* #input-left {
+  top: -100px;
+}
+#input-right {
+  top: -50px;
+} */
+input[type=range]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 0 none;
+  background-color: red;
+  -webkit-appearance: none;
+}
